@@ -20,15 +20,32 @@ def run_chat():
 
         history.append({'role': 'user', 'content': user_input})
 
+        if Turn_count == 2:
+            print('History:', history)
+
+        #6 messages got printed when History got printed" 
+        #The API needs to keep the last messages to his memory in order to be consistent in his answers and replays, to have a context about the user's needs in that specific chat and more"
+
         response = client.messages.create(
             model='claude-haiku-4-5-20251001',
             max_tokens=300,
-            temperature=0.7,
+            temperature=1,
+
+            #tHE Temperature controls the randomness of the API's answer, if the temperature is set to 0 the API will pick the single most likely token (word)"
+            #But if for example the temparture will be set to 1 at that point the API's answers will be much more random and less predictable."
+
             system=system_message,
             messages=history
         )
+
+
     
         reply = response.content[0].text
+
+        #print(response)
+        #Usage.inpUt_tokens is the number of tokens in a prompt or a message me or a user sends to the API
+        #And a usage.output_tokens is the number of tokens in the response that the API generates  and sends back to the user.
+
         print(f'Claude: {reply}')
         history.append({'role': 'assistant', 'content': reply})
         Turn_count = int(len(history)/2)
