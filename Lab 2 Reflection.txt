@@ -1,0 +1,17 @@
+REFLECTION
+
+Q1:
+
+In my world it's like when I export a big video that I've been working on for a client 
+every time they want a tiny 2 second change at the end,
+i can't just render those 2 seconds and instead 
+i have to re-render the entire video from the very start.
+the longer the project gets, the more time and computer storage it takes just to make small changes,
+So I always keep an eye on the computer's storage and delete videos I don't need anymore.
+
+Q2: print('History so far:', history)
+WHen I tried removing the print line the ai has been acting exactly the same,
+you do lose visibility on your terminal so you're running blind, but the actual ai logic doesn't change
+
+Q3:
+I experienced no bugs in this lab. 
